@@ -12,16 +12,12 @@ int check_cycle(listint_t *list)
 	if (list == NULL)
 		return (0);
 
-	while (temp != NULL)
+	while (temp != NULL && comp != NULL && temp->next != NULL)
 	{
-		while (temp != comp && comp != NULL)
-		{
-			if (temp->next == comp)
-				return (1);
-			comp = comp->next;
-		}
-		temp = temp->next;
-		comp = list;
+		temp = temp->next->next;
+		comp = comp->next;
+		if (temp == comp)
+			return (1);
 	}
 
 	return (0);
