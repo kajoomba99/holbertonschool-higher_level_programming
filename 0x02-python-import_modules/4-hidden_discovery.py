@@ -4,4 +4,4 @@ if __name__ == "__main__":
     for w in dir(hidden_4):
         if w.startwith("__"):
             continue
-        print(w)
+        print("{:s}".fotmat(w))
