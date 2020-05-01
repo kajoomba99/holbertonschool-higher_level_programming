@@ -3,7 +3,7 @@ if __name__ == "__main__":
     from sys import argv, exit
     from calculator_1 import add, sub, mul, div
 
-    if len(argv) > 4 or  len(argv) < 4:
+    if len(argv) > 4 or len(argv) < 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     else:
