@@ -1,37 +1,29 @@
 #include "lists.h"
 /**
  * is_palindrome - is_palindrome
- * @head: head
- * Return: return
+ * @head:head
+ * Return:return
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *comi = *head;
-	listint_t *comf = *head;
-	listint_t *tl = *head;
-	int counter = 0;
-	int dec = 1;
-	int x = 0;
+	listint_t *tmp = *head;
+	int i = 0, j;
+	int arr[10000];
 
-	while (tl != NULL)
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
+	while (tmp)
 	{
-		counter += 1;
-		tl = tl->next;
+		arr[i] = tmp->n;
+		i++;
+		tmp = tmp->next;
 	}
-
-	while (comi != NULL)
+	i--;
+	for (j = 0; j <= i; j++, i--)
 	{
-		x = 0;
-		comf = *head;
-		while (x < (counter - dec))
-		{
-			comf = comf->next;
-			x += 1;
-		}
-		dec += 1;
-		if (comi->n != comf->n)
+		if (arr[i] != arr[j])
 			return (0);
-		comi = comi->next;
 	}
 	return (1);
 }
