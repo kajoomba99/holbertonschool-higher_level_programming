@@ -15,5 +15,5 @@ def roman_to_int(roman_string):
             num += roman_numeral[i] - (prev_num * 2)
         elif prev_num >= roman_numeral[i]:
             num += (roman_numeral[i])
-            prev_num = roman_numeral[i]
+        prev_num = roman_numeral[i]
     return num
