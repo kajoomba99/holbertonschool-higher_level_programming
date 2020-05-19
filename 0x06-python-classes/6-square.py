@@ -22,11 +22,12 @@ class Square:
         """print a square of #"""
         if self.__size == 0:
             print("")
-        for i in range(self.__position[1]):
-            print("")
-        for i in range(self.__size):
-            print(" " * self.__position[0], end='')
-            print("#" * self.__size)
+        else:
+            for i in range(self.__position[1]):
+                print("")
+            for i in range(self.__size):
+                print(" " * self.__position[0], end='')
+                print("#" * self.__size)
 
     @property
     def size(self):
@@ -52,14 +53,8 @@ class Square:
         """set value to position"""
         if not isinstance(value, tuple) or value != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
-        if not checkForInt(value):
+        if not isinstance(value[0], int) or value[0] < 0:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        if not isinstance(value[1], int) or value[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
-
-
-def checkForInt(elements):
-    """Validation"""
-    for i in elements:
-        if not isinstance(i, int) or i < 0:
-            return False
-    return True
