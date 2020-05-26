@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+"""This module defines the class Rectangle"""
+
+
 class Rectangle:
-    """Class that builds a rectangle"""
+    """
+    Class that builds a rectangle
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+    """
 
     number_of_instances = 0
 
@@ -11,8 +18,8 @@ class Rectangle:
             width: width for __width attribute
             height: height for __height atributte
         """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -31,10 +38,11 @@ class Rectangle:
         Args:
             value: value for __height attribute
         """
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
+
         self.__height = value
 
     @property
@@ -53,7 +61,7 @@ class Rectangle:
         Args:
             value: value for __width attribute
         """
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -79,15 +87,13 @@ class Rectangle:
         """
         Return the rectangle in a string representation
         """
-
         string = ""
-        if self.__width == 0 or self.__height == 0:
-            return string
-        for row in range(self.__height):
-            for _ in range(self.__width):
-                string += "#"
-            if row < self.__height - 1:
-                string += "\n"
+        if self.__width != 0 or self.__height != 0:
+            for row in range(self.__height):
+                for _ in range(self.__width):
+                    string += "#"
+                if row < self.__height - 1:
+                    string += "\n"
         return string
 
     def __repr__(self):
@@ -96,12 +102,11 @@ class Rectangle:
         recreation
         """
 
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """
-        Final process when an instance is killed
+        Final message when an instance is killed
         """
-
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
