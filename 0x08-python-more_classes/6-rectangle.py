@@ -11,8 +11,8 @@ class Rectangle:
             width: width for __width attribute
             height: height for __height atributte
         """
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
     @property
