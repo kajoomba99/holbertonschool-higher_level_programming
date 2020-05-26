@@ -68,12 +68,16 @@ class Rectangle:
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        rect = ''
-        ic = 0
-        if self.__height > 0 and self.__height > 0:
-            for _ in range(0, self.__height):
-                rect += "#" * self.__width
-                if ic is not (self.__height - 1):
-                    rect += '\n'
-                ic += 1
-        return rect
+        """
+        Return the rectangle in a string representation
+        """
+
+        string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
+        for row in range(self.__height):
+            for _ in range(self.__width):
+                string += "#"
+            if row < self.__height - 1:
+                string += "\n"
+        return string
