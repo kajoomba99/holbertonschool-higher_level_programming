@@ -70,9 +70,10 @@ class Rectangle:
     def __str__(self):
         rect = ''
         ic = 0
-        for _ in range(0, self.__height):
-            rect += "#" * self.__width
-            if ic is not (self.__height - 1):
-                rect += '\n'
-            ic += 1
+        if self.__height > 0 and self.__height > 0:
+            for _ in range(0, self.__height):
+                rect += "#" * self.__width
+                if ic is not (self.__height - 1):
+                    rect += '\n'
+                ic += 1
         return rect
