@@ -129,4 +129,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """Ayuda ya no quiero comentar mas"""
         return cls(size, size)
