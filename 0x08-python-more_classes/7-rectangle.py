@@ -1,9 +1,17 @@
 #!/usr/bin/python3
+"""This module defines the class Rectangle"""
+
+
 class Rectangle:
-    """Class that builds a rectangle"""
+    """
+    Class that builds a rectangle
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+        print_symbol (any): The symbol used for string representation.
+    """
 
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """
@@ -12,8 +20,8 @@ class Rectangle:
             width: width for __width attribute
             height: height for __height atributte
         """
-        self.__height = height
-        self.__width = width
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -32,10 +40,11 @@ class Rectangle:
         Args:
             value: value for __height attribute
         """
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
+
         self.__height = value
 
     @property
@@ -54,7 +63,7 @@ class Rectangle:
         Args:
             value: value for __width attribute
         """
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -80,15 +89,14 @@ class Rectangle:
         """
         Return the rectangle in a string representation
         """
-        rect = ''
-        ic = 0
-        for _ in range(0, self.__height):
-            for _ in range(0, self.__width):
-                rect += str(self.print_symbol)
-            if ic is not (self.__height - 1):
-                rect += '\n'
-            ic += 1
-        return rect
+        string = ""
+        if self.__width != 0 or self.__height != 0:
+            for row in range(self.__height):
+                for _ in range(self.__width):
+                    string += str(self.print_symbol)
+                if row < self.__height - 1:
+                    string += "\n"
+        return string
 
     def __repr__(self):
         """
@@ -96,12 +104,11 @@ class Rectangle:
         recreation
         """
 
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """
         Final process when an instance is killed
         """
-
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
