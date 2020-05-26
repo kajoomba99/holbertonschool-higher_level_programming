@@ -1,51 +1,36 @@
 #!/urs/bin/python3
 
-"""[summary]
-
-    Raises:
-        TypeError: [description]
-        ValueError: [description]
-        TypeError: [description]
-        ValueError: [description]
-
-    Returns:
-        [type] -- [description]
-    """
+"""This module defines the class Rectangle"""
 
 
 class Rectangle:
-    """[summary]
-    """
+    """Class that builds a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """[summary]
-
-        Keyword Arguments:
-            width {int} -- [description] (default: {0})
-            height {int} -- [description] (default: {0})
+        """
+        Initializes instance of the rectangle
+        Args:
+            width: width for __width attribute
+            height: height for __height atributte
         """
         self.height = height
         self.width = width
 
     @property
     def height(self):
-        """[summary]
-
+        """
+        Getter function of height
         Returns:
-            [type] -- [description]
+            The height of the rectangle
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """[summary]
-
-        Arguments:
-            value {[type]} -- [description]
-
-        Raises:
-            TypeError: [description]
-            ValueError: [description]
+        """
+        Setter function of height
+        Args:
+            value: value for __height attribute
         """
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -55,23 +40,19 @@ class Rectangle:
 
     @property
     def width(self):
-        """[summary]
-
+        """
+        Getter function of width
         Returns:
-            [type] -- [description]
+            The width of the rectangle
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """[summary]
-
-        Arguments:
-            value {[type]} -- [description]
-
-        Raises:
-            TypeError: [description]
-            ValueError: [description]
+        """
+        Setter function of width
+        Args:
+            value: value for __width attribute
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
