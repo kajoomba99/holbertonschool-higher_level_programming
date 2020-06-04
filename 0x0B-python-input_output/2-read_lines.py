@@ -14,4 +14,4 @@ def read_lines(filename="", nb_lines=0):
                     break
                 print(line, end="")
         else:
-            print(a_file.read())
+            print(a_file.read(), end="")
