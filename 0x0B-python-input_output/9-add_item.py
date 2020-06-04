@@ -3,19 +3,18 @@
 
 
 from sys import argv
-from os import path
+import os.path
 
-save_to_json_file = __import__("7-save_to_json_file").save_to_json_file
-load_from_json_file = __import__("8-load_from_json_file").load_from_json_file
+save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
+
 
 file_name = "add_item.json"
-my_list = []
+args = argv[1:]
+new_list = []
 
+# Creating file if doesn't exist and adding the list
+if os.path.exists(file_name):
+    new_list = load_from_json_file(file_name)
 
-if path.exists(file_name) and path.getsize(file_name) > 0:
-    my_list = load_from_json_file("add_item.json")
-    for i in range(1, len(argv)):
-        my_list.append(argv[i])
-
-
-save_to_json_file(my_list, file_name)
+save_to_json_file(new_list + args, file_name)
