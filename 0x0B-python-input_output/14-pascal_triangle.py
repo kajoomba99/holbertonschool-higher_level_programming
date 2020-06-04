@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Module"""
+
+
 def pascal_triangle(n):
+    """Function"""
     arr = []
     if n <= 0:
         return arr
