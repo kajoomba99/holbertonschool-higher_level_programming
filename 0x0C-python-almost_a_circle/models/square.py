@@ -31,21 +31,12 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
         if args and args != []:
-            attr_list = list(self.__dict__)
-            j = 0
+            attr_list = ["id", "size", "x", "y"]
             for i in range(len(args)):
-                setattr(self, attr_list[j], args[i])
-                if i == 1:
-                    setattr(self, attr_list[j + 1], args[i])
-                    j += 1
-                j += 1
+                setattr(self, attr_list[i], args[i])
         else:
             for kw in kwargs:
-                if kw == "size":
-                    setattr(self, "width", kwargs[kw])
-                    setattr(self, "height", kwargs[kw])
-                if hasattr(self, kw):
-                    setattr(self, kw, kwargs[kw])
+                setattr(self, kw, kwargs[kw])
 
     @property
     def size(self):
