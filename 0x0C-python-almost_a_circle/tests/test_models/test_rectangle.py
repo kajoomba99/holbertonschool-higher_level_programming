@@ -15,7 +15,27 @@ class TestRectangle(TestCase):
 
     def setUp(self):
         Base._Base__nb_objects = 0
+    
+    def test_id(self):
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.id, 1)
+        r2 = Rectangle(2, 10)
+        self.assertEqual(r2.id, 2)
+        r3 = Rectangle(10, 2, 0, 0, 12)
+        self.assertEqual(r3.id, 12)
 
+    def test_validate_attr(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r1 = Rectangle(10, "2")
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r = Rectangle(10, 2)
+            r.width = -10
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r = Rectangle(10, 2)
+            r.x = {}
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            Rectangle(10, 2, 3, -1)
+        
     def test_area(self):
         """Test area method"""
         r1 = Rectangle(3, 2)
