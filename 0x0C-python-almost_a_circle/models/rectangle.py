@@ -71,7 +71,7 @@ class Rectangle(Base):
     def width(self, width):
         """set new value to width"""
         super().int_validator("width", width)
-        super().under_zero("width", width)
+        super().under_equal_zero("width", width)
         self.__width = width
 
     @property
@@ -83,7 +83,7 @@ class Rectangle(Base):
     def height(self, height):
         """set new value to width"""
         super().int_validator("height", height)
-        super().under_zero("height", height)
+        super().under_equal_zero("height", height)
         self.__height = height
 
     @property

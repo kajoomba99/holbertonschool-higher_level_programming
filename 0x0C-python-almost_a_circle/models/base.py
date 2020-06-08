@@ -5,7 +5,7 @@
 import json
 import os
 import csv
-import turtle
+import turtle 
 
 
 class Base:
@@ -57,7 +57,6 @@ class Base:
             des += s
         turtle.exitonclick()
 
-
     @staticmethod
     def to_json_string(list_dictionaries):
         """return the JSON string representation of list_dictionaries"""
@@ -96,9 +95,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        new_rect = cls(0, 0)
-        new_rect.update(**dictionary)
-        return new_rect
+        temp = cls(3, 3)
+        temp.update(**dictionary)
+        return temp
 
     @classmethod
     def load_from_file(cls):
