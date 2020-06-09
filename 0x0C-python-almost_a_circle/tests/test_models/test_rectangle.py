@@ -15,7 +15,7 @@ class TestRectangle(TestCase):
 
     def setUp(self):
         Base._Base__nb_objects = 0
-    
+
     def test_id(self):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
@@ -35,7 +35,7 @@ class TestRectangle(TestCase):
             r.x = {}
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(10, 2, 3, -1)
-        
+
     def test_area(self):
         """Test area method"""
         r1 = Rectangle(3, 2)
