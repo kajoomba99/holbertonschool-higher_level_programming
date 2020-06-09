@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""Module that contains the class Base"""
 
+"""
+Module that contains the class Base
+"""
 
 import json
 import os
 import csv
-import turtle 
+import turtle
 
 
 class Base:
@@ -19,7 +21,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-        
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         des = -200
