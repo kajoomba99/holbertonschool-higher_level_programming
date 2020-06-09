@@ -8,6 +8,7 @@ import json
 import os
 import csv
 import turtle
+from os import path
 
 
 class Base:
@@ -111,13 +112,16 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """returns a list of instances"""
-        list_of_class = []
-        with open(cls.__name__ + ".json") as a_file:
-            file_cont = json.loads(a_file.read())
-        for i in file_cont:
-            list_of_class.append(cls.create(**i))
-        return list_of_class
+        """
+        that returns a list of instances
+        """
+
+        filename = cls.__name__ + '.json'
+        if path.isfile(filename):
+            with open(filename, 'r') as f:
+                dictionary = cls.from_json_string(f.read())
+            return [cls.create(**obj) for obj in dictionary]
+        return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
