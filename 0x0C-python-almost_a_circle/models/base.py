@@ -99,9 +99,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        temp = cls(3, 3)
-        temp.update(**dictionary)
-        return temp
+        dummy  = cls(3, 3)
+        dummy .update(**dictionary)
+        return dummy 
 
     @classmethod
     def load_from_file(cls):
