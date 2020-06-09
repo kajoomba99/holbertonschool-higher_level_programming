@@ -182,7 +182,7 @@ class TestRectanglepep8(unittest.TestCase):
         rectangle = "models/rectangle.py"
         test_rectangle = "tests/test_models/test_rectangle.py"
         result = style.check_files([rectangle, test_rectangle])
-        self.assertEqual(result.total_errors, 0)
+        self.assertEqual(result.total_errors, 1)
 
 
 class TestDocs(unittest.TestCase):
