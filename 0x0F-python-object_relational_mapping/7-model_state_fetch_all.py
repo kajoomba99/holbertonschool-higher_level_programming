@@ -7,8 +7,14 @@ from sqlalchemy import create_engine
 from sys import argv
 
 engine = create_engine(
-    'mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3]),
-    pool_pre_ping=True)
+    'mysql+mysqldb://{}:{}@localhost/{}'
+    .format(
+        argv[1],
+        argv[2],
+        argv[3]
+    ),
+    pool_pre_ping=True
+)
 
 Session = sessionmaker(bind=engine)
 
