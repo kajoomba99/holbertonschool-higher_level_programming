@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" that prints all City objects"""
+
 from model_state import Base, State
 from model_city import City
 from sqlalchemy.orm import sessionmaker
