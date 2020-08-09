@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""cities by state"""
+
 import MySQLdb
 from sys import argv
 
