@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ script that lists all states with a name starting with N """
 import MySQLdb
 from sys import argv
@@ -11,11 +11,11 @@ if __name__ == "__main__":
             db=argv[3]
     )
     cur = db.cursor()
-    cur.execute(
-        """SELECT * FROM states
-        WHERE name = '{}'
-        ORDER BY id ASC""".format(argv[4])
-    )
+    query = """SELECT * FROM states
+WHERE name = '{}'
+ORDER BY id ASC""".format(argv[4])
+    print(query)
+    cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
         print(row)
