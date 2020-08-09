@@ -18,6 +18,8 @@ if __name__ == '__main__':
     session = Session()
 
     Base.metadata.create_all(engine)
-    new_state = State(name="Santa ana")
+    new_state = State(name="Louisiana")
     session.add(new_state)
+    louisiana = session.query(State).filter_by(name="Louisiana").first()
+    print(louisiana.id)
     session.commit()
