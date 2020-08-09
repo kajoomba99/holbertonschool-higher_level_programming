@@ -6,20 +6,20 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sys import argv
 
-# create an engine
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-    argv[1], argv[2], argv[3]),
-    pool_pre_ping=True
-)
+if __name__ == '__main__':
 
-# create a configured "Session" class
-Session = sessionmaker(bind=engine)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(argv[1], argv[2], argv[3]),
+                           pool_pre_ping=True)
 
-# create a Session
-session = Session()
+    # create a configured "Session" class
+    Session = sessionmaker(bind=engine)
 
-Base.metadata.create_all(engine)
-session.query(State).filter(State.id == 2).\
-    update({State.name: 'New Mexico'}, synchronize_session=False)
-session.commit()
-session.close()
+    # create a Session
+    session = Session()
+
+    Base.metadata.create_all(engine)
+    session.query(State).filter(State.id == 2).\
+        update({State.name: 'New Mexico'}, synchronize_session=False)
+    session.commit()
+    session.close()
