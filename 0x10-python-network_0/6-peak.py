@@ -7,4 +7,4 @@ def find_peak(list_of_integers):
     if not type(list_of_integers) is list or list_of_integers == []:
         return None
     
-    return max(list_of_integers)
+    return list_of_integers.sort()[-1]
