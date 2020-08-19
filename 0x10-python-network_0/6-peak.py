@@ -3,8 +3,9 @@
 
 
 def find_peak(list_of_integers):
-    """Find the peak in a list"""
-    if not type(list_of_integers) is list or list_of_integers == []:
-        return None
-    
-    return list_of_integers.sort()[-1]
+    """
+    This function returns the peak of a list
+    """
+    if list_of_integers != []:
+        list_of_integers.sort()
+        return list_of_integers[-1]
