@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Moule that contain function to find the peak in a list"""
 
 
