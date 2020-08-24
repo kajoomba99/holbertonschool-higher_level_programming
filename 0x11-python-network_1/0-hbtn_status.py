@@ -8,7 +8,7 @@ if __name__ == "__main__":
         respuesta = my_req.read()
         tipo = type(respuesta)
         decoded = respuesta.decode('utf8')
-        print("""Body response:
-    - type: {}
-    - content: {}
-    - utf8 content: {}""".format(tipo, respuesta, decoded))
+        print("Body response:")
+        print("\t- type: {}".format(tipo))
+        print("\t- content: {}".format(respuesta))
+        print("\t- utf8 content: {}".format(decoded))
