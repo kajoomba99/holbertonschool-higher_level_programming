@@ -17,8 +17,8 @@ if __name__ == "__main__":
         if json_res == {}:
             print("No result")
         else:
-            u_id = json_res['id']
-            name = json_res['name']
+            u_id = json_res.get('id')
+            name = json_res.get('name')
             print("[{}] {}".format(u_id, name))
     except Exception as e:
         print("Not a valid JSON")
