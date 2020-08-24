@@ -2,9 +2,11 @@
 """some commentary"""
 import requests
 
-r = requests.get('https://intranet.hbtn.io/status')
-content = r.text
 
-print(f"""Body response:
-    - type: {type(content)}
-    - content: {content}""")
+if __name__ == "__main__":
+    r = requests.get('https://intranet.hbtn.io/status')
+    content = r.text
+
+    print("Body response:")
+    print("\t- type: {}".format(type(content)))
+    print("\t- content: {}".format(content))
