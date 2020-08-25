@@ -11,8 +11,11 @@ if __name__ == "__main__":
         user,
         repo
     )
-    req = requests.get(url).json()
-    for i in range(10):
-        sha = req[i].get('sha')
-        author_name = req[i].get('commit').get('author').get('name')
-        print("{}: {}".format(sha, author_name))
+    try:
+        req = requests.get(url).json()
+        for i in range(10):
+            sha = req[i].get('sha')
+            author_name = req[i].get('commit').get('author').get('name')
+            print("{}: {}".format(sha, author_name))
+    except Exception as e:
+        pass
