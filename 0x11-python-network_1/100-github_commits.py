@@ -5,8 +5,8 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    user = argv[1]
-    repo = argv[2]
+    user = argv[2]
+    repo = argv[1]
     url = "https://api.github.com/repos/{}/{}/commits".format(
         user,
         repo
