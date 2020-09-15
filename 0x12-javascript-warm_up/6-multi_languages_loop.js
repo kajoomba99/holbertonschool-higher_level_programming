@@ -1,5 +1,6 @@
 #!/usr/bin/node
 const strings = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-strings.forEach(element => {
-  console.log(element);
-});
+const numberOfItems = strings.length
+for (let i = 0; i < numberOfItems; i++) {
+  console.log(strings[i])
+}
