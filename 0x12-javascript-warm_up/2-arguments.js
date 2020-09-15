@@ -2,7 +2,7 @@
 const numOfArgs = process.argv.length;
 
 const pluralize = (long) => {
-  if (long === 3) {
+  if (long === 1) {
     return '';
   } else {
     return 's';
@@ -12,5 +12,5 @@ const pluralize = (long) => {
 if (numOfArgs <= 2) {
   console.log('No argument');
 } else {
-  console.log('Argument' + pluralize(numOfArgs) + ' found');
+  console.log('Argument' + pluralize(numOfArgs - 2) + ' found');
 }
