@@ -11,6 +11,9 @@ if (numOfArgs <= 2 || args[2] === '1') {
   });
   const long = arrOfInts.length;
   const sortedArr = arrOfInts.sort((a, b) => a - b);
-  const socondLargestNumber = sortedArr[long - 2];
-  console.log(socondLargestNumber);
+  if (long === 1) {
+    console.log(sortedArr[long - 1]);
+  } else {
+    console.log(sortedArr[long - 2]);
+  }
 }
