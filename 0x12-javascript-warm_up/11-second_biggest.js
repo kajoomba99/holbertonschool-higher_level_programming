@@ -12,7 +12,7 @@ if (numOfArgs <= 2 || args[2] === '1') {
   const long = arrOfInts.length;
   const sortedArr = arrOfInts.sort((a, b) => a - b);
   if (long === 1) {
-    console.log(sortedArr[long - 1]);
+    console.log(0);
   } else {
     console.log(sortedArr[long - 2]);
   }
