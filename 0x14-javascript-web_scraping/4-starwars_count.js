@@ -4,7 +4,7 @@ let wedge = 0;
 const args = process.argv;
 const url = args[2];
 request(url, (err, resp, body) => {
-  if (err) return console.error(err);
+  if (err) return console.log(err);
   const jsonResp = JSON.parse(body);
   const { results } = jsonResp;
   for (let i = 0; i < results.length; i++) {
